@@ -90,11 +90,12 @@ function DubleLinechart() {
           horizontal: 6,
     vertical: 10 ,
   },
-        markers: {
-          Width: 10,
-          height: 10,
-          radius: 50,
-        },
+       markers: {
+    size: 12, // ✅ replaces width, height, radius
+    strokeWidth: 1,
+    shape: 'circle',
+    offsetX: -5,
+  },
         labels: {
           colors: "#374151",
           useSeriesColors: false,
@@ -155,7 +156,7 @@ function DubleLinechart() {
         options={state.options}
         series={state.series}
         type="area"
-        height={370}
+        height={320}
       />
     </>
   );

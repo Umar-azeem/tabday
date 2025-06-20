@@ -3,7 +3,6 @@ import BasicChart from "./basicChart";
 import React from "react";
 import Filter from "./filter";
 import LineWithDataLabel from "./lineWithDataLabel";
-import MobileAppRevenue from "./mobileAppRevenue";
 import Platform from "./platfrom";
 import Retention from "./retention";
 import TotalAppUsers from "./totalAppUsers";
@@ -28,15 +27,12 @@ function Overview() {
           <LineWithDataLabel />
         </div>
         <div className="rounded-lg border cursor-pointer">
-          <MobileAppRevenue />
           <Platform />
         </div>
         <div className="rounded-lg border cursor-pointer">
-          <MobileAppRevenue />
           <Retention />
         </div>
         <div className="rounded-lg border cursor-pointer">
-          <MobileAppRevenue />
           <TotalAppUsers />
         </div>
       </div>

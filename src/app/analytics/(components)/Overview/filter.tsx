@@ -6,11 +6,9 @@ import CustomDateInput from './CustomDateInput';
 
 function Filter() {
    // State for start and end dates, initialized to match the image's example
-  const [startDate, setStartDate] = useState(new Date('2025-02-01T00:00:00'));
-  const [endDate, setEndDate] = useState(new Date('2025-02-14T00:00:00'));
-
-  // Handler for when the date range changes
-  const handleDateChange = (dates) => {
+   const [startDate, setStartDate] = useState<Date | null>(new Date("2025-02-01T00:00:00"));
+  const [endDate, setEndDate] = useState<Date | null>(new Date("2025-02-14T00:00:00"));
+   const handleDateChange = (dates: [Date | null, Date | null]) => {
     const [start, end] = dates;
     setStartDate(start);
     setEndDate(end);
@@ -83,8 +81,18 @@ function Filter() {
       <div className=" text-sm flex justify-between mt-1">
       <h2 className="text-lg font-bold">$264,697.36</h2>
 
-      <p className='text-green-500 text-lg font-bold flex'><svg className="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M5 10l5-5 5 5H5z" clipRule="evenodd" /></svg>
-16%</p>  
+      <p className='text-green-500 text-lg font-bold flex'>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-4 w-4 mr-1"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+            </svg>
+           16%</p>  
       </div>
     </div>
    
@@ -97,8 +105,17 @@ function Filter() {
       <div className=" text-sm flex justify-between mt-1">
       <h2 className="text-lg font-bold">1,306</h2>
 
-      <p className='text-green-500 text-lg font-bold flex'><svg className="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M5 10l5-5 5 5H5z" clipRule="evenodd" /></svg>
-11%</p>  
+      <p className='text-green-500 text-lg font-bold flex'>
+<svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-4 w-4 mr-1"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+            </svg>11%</p>  
       </div>
     </div>
    
@@ -111,8 +128,17 @@ function Filter() {
       <div className=" text-sm flex justify-between mt-1">
       <h2 className="text-lg font-bold">69.5%</h2>
 
-      <p className='text-green-500 text-lg font-bold flex'><svg className="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M5 10l5-5 5 5H5z" clipRule="evenodd" /></svg>
-30%</p>  
+      <p className='text-green-500 text-lg font-bold flex'>
+<svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-4 w-4 mr-1"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+            </svg>30%</p>  
       </div>
     </div>
   </div>

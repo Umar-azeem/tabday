@@ -1,5 +1,4 @@
 'use client';
-
 import dynamic from 'next/dynamic';
 import React, { useState } from 'react';
 import { ApexOptions } from 'apexcharts';
@@ -85,12 +84,10 @@ function LineWithDataLabel() {
     vertical: 15,
   },
   markers: {
-    width: 120,
-    height: 120,
-    radius: 50, // Big round circle
-    strokeColor: '#E5E7EB',
+    size: 12, // ✅ replaces width, height, radius
     strokeWidth: 1,
     shape: 'circle',
+    offsetX: -5,
   },
 }
     },
