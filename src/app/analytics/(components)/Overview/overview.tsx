@@ -1,5 +1,8 @@
 "use client";
-import BasicChart from "./basicChart";
+// import BasicChart from "./basicChart";
+const BasicChart = dynamic(() => import("./basicChart"), {
+  ssr: false,
+});
 import React from "react";
 import Filter from "./filter";
 import LineWithDataLabel from "./lineWithDataLabel";
@@ -8,7 +11,9 @@ import Retention from "./retention";
 import TotalAppUsers from "./totalAppUsers";
 import AppActivity from "./appActivity";
 import DubleLinechart from "./dubleLinechart";
-function Overview() {
+import dynamic from "next/dynamic";
+
+const Overview = () => {
   return (
     <>
       <Filter />
@@ -38,6 +43,6 @@ function Overview() {
       </div>
     </>
   );
-}
+};
 
 export default Overview;

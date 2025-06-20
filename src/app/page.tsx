@@ -1,10 +1,35 @@
+"use client";
 import React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import PushPerformance from "./analytics/(components)/PushPerformance/pushPerformance";
-import Overview from "./analytics/(components)/Overview/Overview";
-import Retentions from "./analytics/(components)/Retention/Retention";
-import CustomerFunnel from "./analytics/(components)/CustomerFunnel/CustomerFunnel";
-
+// import PushPerformance from "./analytics/(components)/PushPerformance/pushPerformance";
+// import Overview from "./analytics/(components)/Overview/Overview";
+// import Retentions from "./analytics/(components)/Retention/Retention";
+// import CustomerFunnel from "./analytics/(components)/CustomerFunnel/CustomerFunnel";
+const PushPerformance = dynamic(
+  () => import("./analytics/(components)/PushPerformance/pushPerformance"),
+  {
+    ssr: false,
+  }
+);
+const Overview = dynamic(
+  () => import("./analytics/(components)/Overview/Overview"),
+  {
+    ssr: false,
+  }
+);
+import dynamic from "next/dynamic";
+const Retentions = dynamic(
+  () => import("./analytics/(components)/Retention/Retention"),
+  {
+    ssr: false,
+  }
+);
+const CustomerFunnel = dynamic(
+  () => import("./analytics/(components)/CustomerFunnel/CustomerFunnel"),
+  {
+    ssr: false,
+  }
+);
 const Home = () => {
   return (
     <div>
