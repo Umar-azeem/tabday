@@ -7,13 +7,11 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/components/ui/tabs";
-
 // ✅ Dynamic imports from corrected folder
 const Overview = dynamic(() => import("./analytics/(components)/Overview/Overview"), { ssr: false });
 const Retentions = dynamic(() => import("./analytics/(components)/Retention/Retention"), { ssr: false });
 const CustomerFunnel = dynamic(() => import("./analytics/(components)/CustomerFunnel/CustomerFunnel"), { ssr: false });
-const PushPerformance = dynamic(() => import("./analytics/(components)/PushPerformance/pushPerformance"), { ssr: false });
-
+const PushPerformance = dynamic(() => import("./analytics/(components)/PushPerformance/pushPerformance"), { ssr: false }); 
 const Home = () => {
   return (
     <div>
@@ -61,5 +59,4 @@ const Home = () => {
     </div>
   );
 };
-
 export default Home;
