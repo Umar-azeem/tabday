@@ -95,11 +95,11 @@ function BasicChart() {
           vertical: 15,
         },
         markers: {
-          size: 6, // radius of the point
+          size: 8, // radius of the point
           // strokeColor: "#E5E7EB",
           strokeWidth: 1,
           shape: "circle", // 'circle' or 'square'
-          offsetX: 0,
+          offsetX: -5,
           offsetY: 0,
         },
       },

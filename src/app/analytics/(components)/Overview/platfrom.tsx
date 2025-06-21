@@ -67,7 +67,7 @@ function CoupleBarChart() {
         vertical: 10,
       },
       markers: {
-    size: 12, // ✅ replaces width, height, radius
+    size: 8, // ✅ replaces width, height, radius
     strokeWidth: 1,
     shape: 'circle',
     offsetX: -5,
