@@ -1,35 +1,19 @@
 "use client";
 import React from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-// import PushPerformance from "./analytics/(components)/PushPerformance/pushPerformance";
-// import Overview from "./analytics/(components)/Overview/Overview";
-// import Retentions from "./analytics/(components)/Retention/Retention";
-// import CustomerFunnel from "./analytics/(components)/CustomerFunnel/CustomerFunnel";
-const PushPerformance = dynamic(
-  () => import("./analytics/(components)/PushPerformance/pushPerformance"),
-  {
-    ssr: false,
-  }
-);
-const Overview = dynamic(
-  () => import("./analytics/(components)/Overview/Overview"),
-  {
-    ssr: false,
-  }
-);
 import dynamic from "next/dynamic";
-const Retentions = dynamic(
-  () => import("./analytics/(components)/Retention/Retention"),
-  {
-    ssr: false,
-  }
-);
-const CustomerFunnel = dynamic(
-  () => import("./analytics/(components)/CustomerFunnel/CustomerFunnel"),
-  {
-    ssr: false,
-  }
-);
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@/components/ui/tabs";
+
+// ✅ Dynamic imports from corrected folder
+const Overview = dynamic(() => import("./analytics/(components)/Overview/Overview"), { ssr: false });
+const Retentions = dynamic(() => import("./analytics/(components)/Retention/Retention"), { ssr: false });
+const CustomerFunnel = dynamic(() => import("./analytics/(components)/CustomerFunnel/CustomerFunnel"), { ssr: false });
+const PushPerformance = dynamic(() => import("./analytics/(components)/PushPerformance/pushPerformance"), { ssr: false });
+
 const Home = () => {
   return (
     <div>
@@ -46,39 +30,16 @@ const Home = () => {
           className="w-full flex justify-center items-center"
         >
           <TabsList className="bg-gray-100 rounded flex h-auto">
-            <TabsTrigger
-              value="Overview"
-              className="px-12 py-3 rounded text-xs font-medium text-gray-700 
-              data-[state=active]:text-[#342AEF] data-[state=active]:bg-white 
-              data-[state=active]:shadow-sm transition"
-            >
+            <TabsTrigger value="Overview" className="px-12 py-3 rounded text-xs font-medium text-gray-700 data-[state=active]:text-[#342AEF] data-[state=active]:bg-white data-[state=active]:shadow-sm transition">
               Overview
             </TabsTrigger>
-
-            <TabsTrigger
-              value="Retention"
-              className="px-12 py-3 rounded text-xs font-medium text-gray-700 
-              data-[state=active]:text-[#342AEF] data-[state=active]:bg-white 
-              data-[state=active]:shadow-sm transition"
-            >
+            <TabsTrigger value="Retention" className="px-12 py-3 rounded text-xs font-medium text-gray-700 data-[state=active]:text-[#342AEF] data-[state=active]:bg-white data-[state=active]:shadow-sm transition">
               Retention
             </TabsTrigger>
-
-            <TabsTrigger
-              value="Customer funnel"
-              className="px-12 py-3 rounded text-xs font-medium text-gray-700 
-              data-[state=active]:text-[#342AEF] data-[state=active]:bg-white 
-              data-[state=active]:shadow-sm transition"
-            >
+            <TabsTrigger value="Customer funnel" className="px-12 py-3 rounded text-xs font-medium text-gray-700 data-[state=active]:text-[#342AEF] data-[state=active]:bg-white data-[state=active]:shadow-sm transition">
               Customer funnel
             </TabsTrigger>
-
-            <TabsTrigger
-              value="Push performance"
-              className="px-12 py-3 rounded text-xs font-medium text-gray-700 
-              data-[state=active]:text-[#342AEF] data-[state=active]:bg-white 
-              data-[state=active]:shadow-sm transition"
-            >
+            <TabsTrigger value="Push performance" className="px-12 py-3 rounded text-xs font-medium text-gray-700 data-[state=active]:text-[#342AEF] data-[state=active]:bg-white data-[state=active]:shadow-sm transition">
               Push performance
             </TabsTrigger>
           </TabsList>
